@@ -10,7 +10,6 @@ export const App = ({ submitTodo }) => (
   <div className="App">
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="App-title">App</h1>
     </header>
     <h1>Todo List</h1>
     <AddTodo submitTodo={submitTodo}/>
