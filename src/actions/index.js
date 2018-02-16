@@ -18,9 +18,9 @@ const actions = {
   deleteTodo(id) {
     return {
       type: types.DELETE_TODO,
-      id: id
+      id: id,
     };
-  }
+  },
 };
 
 export default actions;
