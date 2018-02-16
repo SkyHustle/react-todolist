@@ -5,8 +5,14 @@ export const initialState = {
 };
 
 export const reducer = (state = initialState, action) => {
-  switch (action.type) {
+  const updatedList = () => {
+    const objIndex = state.todos.findIndex((obj => obj.id == action.id));
+    state.todos[objIndex].text = action.text
 
+    return state.todos
+  }
+
+  switch (action.type) {
     case types.SUBMIT_TODO:
       return {
         ...state,
@@ -27,6 +33,12 @@ export const reducer = (state = initialState, action) => {
             todo.id !== action.id
           )),
         ],
+      };
+
+    case types.UPDATE_TODO:
+      return {
+        ...state,
+        todos: updatedList(),
       };
 
     default:

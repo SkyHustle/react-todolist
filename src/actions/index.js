@@ -21,10 +21,11 @@ const actions = {
       id: id,
     };
   },
-  updateTodo(id) {
+  updateTodo(id, newText) {
     return {
       type: types.UPDATE_TODO,
       id: id,
+      text: newText,
     };
   },
 };

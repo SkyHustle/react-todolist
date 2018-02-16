@@ -52,4 +52,34 @@ describe('Reducer', () => {
       expect(reducer(startingState, action)).toEqual(expectedState);
     });
   });
+
+  describe('Update todo', () => {
+    it('Should return the correct state', () => {
+      const startingState = {
+        todos: [
+          {
+            id: 1,
+            text: todoText,
+          },
+        ],
+      };
+
+      const action = {
+        type: types.UPDATE_TODO,
+        id: 1,
+        text: 'Updated Text',
+      };
+
+      const expectedState = {
+        todos: [
+          {
+            id: 1,
+            text: 'Updated Text',
+          }
+        ],
+      };
+
+      expect(reducer(startingState, action)).toEqual(expectedState);
+    });
+  });
 });
