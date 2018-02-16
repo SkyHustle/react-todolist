@@ -21,6 +21,12 @@ const actions = {
       id: id,
     };
   },
+  updateTodo(id) {
+    return {
+      type: types.UPDATE_TODO,
+      id: id,
+    };
+  },
 };
 
 export default actions;

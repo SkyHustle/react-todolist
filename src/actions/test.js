@@ -22,4 +22,13 @@ describe('Actions', () => {
 
     expect(actions.deleteTodo(1)).toEqual(expectedAction);
   });
+
+  it('Should create an action to update a todo', () => {
+    const expectedAction = {
+      type: types.UPDATE_TODO,
+      id: 1,
+    };
+
+    expect(actions.updateTodo(1)).toEqual(expectedAction);
+  });
 });

@@ -28,4 +28,19 @@ describe('TodoList App', () => {
 
     expect(actual.state).to.equal('failure');
   });
+
+  it('Should allow me to update a Todo', () => {
+    const todoText = 'Get better at testing';
+    browser.url('http://localhost:3000/');
+    browser.element('.todo-input').setValue(todoText);
+    browser.click('.todo-submit');
+
+    browser.click('.todo-update');
+    const updatedTodoText = 'Updated Todo Text';
+    browser.element('.todo-input').setValue(updatedTodoText);
+    browser.click('.todo-submit');
+    const actual = browser.element('.todo-text').getText();
+
+    expect(actual.state).to.equal(updatedTodoText);
+  });
 });
