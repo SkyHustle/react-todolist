@@ -34,4 +34,10 @@ describe('TodoList component', () => {
     component.find('.todo-delete').simulate('click');
     expect(deleteMock.mock.calls.length).toEqual(1);
   });
+
+  it('Should call the updateTodo function when Update button is clicked', () => {
+    // expect(deleteMock.mock.calls.length).toEqual(0);
+    // component.find('.todo-update').simulate('click');
+    // expect(deleteMock.mock.calls.length).toEqual(1);
+  });
 });

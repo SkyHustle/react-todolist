@@ -7,14 +7,14 @@ import actions from './actions/';
 import logo from './logo.svg';
 import './App.css';
 
-export const App = ({ submitTodo, todos, deleteTodo }) => (
+export const App = ({ submitTodo, todos, deleteTodo, updateTodo }) => (
   <div className="App">
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
     </header>
     <h1>Todo List</h1>
     <AddTodo submitTodo={submitTodo}/>
-    <TodoList todos={todos} deleteTodo={deleteTodo} />
+    <TodoList todos={todos} deleteTodo={deleteTodo} updateTodo={updateTodo} />
   </div>
 );
 
@@ -27,6 +27,7 @@ App.propTypes = {
     },
   )).isRequired,
   deleteTodo: PropTypes.func.isRequired,
+  updateTodo: PropTypes.func.isRequired,
 };
 
 
@@ -41,6 +42,10 @@ const mapDispatchToProps = dispatch => ({
 
   deleteTodo: (id) => {
     dispatch(actions.deleteTodo(id));
+  },
+
+  updateTodo: (id, newText) => {
+    dispatch(actions.updateTodo(id, newText));
   },
 });
 
