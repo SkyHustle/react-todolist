@@ -6,7 +6,7 @@ export const initialState = {
 
 export const reducer = (state = initialState, action) => {
   const updatedList = () => {
-    const objIndex = state.todos.findIndex((obj => obj.id == action.id));
+    const objIndex = state.todos.findIndex((obj => obj.id === action.id));
     state.todos[objIndex].text = action.text
 
     return state.todos
